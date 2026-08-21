@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx
+  namespace: gitops-practice
 spec:
   selector:
     app: nginx
