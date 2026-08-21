@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/yuta15/gitops-practice.git
     targetRevision: main
-    path: manifets
+    path: manifests/
 
   destination:
     server: https://kubernetes.default.svc
