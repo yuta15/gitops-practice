@@ -1,0 +1,18 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+
+# Tool caches
+.import_linter_cache/
+.pytest_cache/
+.ruff_cache/
+
+.env
+.__pycache__
+.import_linter_cache
+.pytest_cache
+.ruff_cache
+.venv

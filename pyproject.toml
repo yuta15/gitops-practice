@@ -1,0 +1,72 @@
+[project]
+name = "gitops-practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.19.1",
+    "fastapi[standard]>=0.141.1",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.15.0",
+    "sqlmodel>=0.0.39",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pyright>=1.1.411",
+    "pytest>=9.1.1",
+    "ruff>=0.16.4",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+    "-ra",
+]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
+xfail_strict = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "B",   # flake8-bugbear
+    "E4",  # pycodestyle import errors
+    "E7",  # pycodestyle statement errors
+    "E9",  # pycodestyle runtime errors
+    "F",   # Pyflakes
+    "I",   # isort
+    "RUF", # Ruff-specific rules
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
+]
+ignore = [
+    "B008", # FastAPI commonly uses function calls in Depends defaults.
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["entrypoints"]
+
+[tool.ruff.format]
+docstring-code-format = true
+quote-style = "double"
+
+[tool.pyright]
+exclude = [
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+]
+include = ["main.py", "src", "tests"]
+pythonVersion = "3.14"
+reportMissingTypeStubs = false
+typeCheckingMode = "strict"
+venv = ".venv"
+venvPath = "."
