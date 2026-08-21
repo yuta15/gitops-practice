@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help setup install-hooks format format-check lint lint-imports pyright test check pre-commit dev run
+.PHONY: help setup install-hooks format format-check lint pyright test check pre-commit dev run
 
 help: ## 利用できるコマンドを表示する
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z_-]+:.*## / {printf "%-16s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -28,7 +28,7 @@ pyright: ## Pyrightで型を検査する
 test: ## pytestを実行する
 	uv run --no-sync pytest
 
-check: lint format-check pyright lint-imports test ## すべての検査を実行する
+check: lint format-check pyright test ## すべての検査を実行する
 
 pre-commit: ## 全ファイルに対してpre-commitを実行する
 	uv run --no-sync pre-commit run --all-files

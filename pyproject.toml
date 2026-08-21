@@ -64,7 +64,7 @@ exclude = [
     ".ruff_cache",
     ".venv",
 ]
-include = ["main.py", "src", "tests"]
+include = ["src", "tests"]
 pythonVersion = "3.14"
 reportMissingTypeStubs = false
 typeCheckingMode = "strict"
