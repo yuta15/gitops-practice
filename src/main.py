@@ -10,9 +10,17 @@ class HealthResponse(BaseModel):
     status: Literal["ok"] = "ok"
 
 
+class HelloResponse(BaseModel):
+    message: str = "Hello World"
+
+
 def health_check() -> HealthResponse:
     """APIがリクエストを処理できる状態であることを返す。"""
     return HealthResponse()
+
+
+def hello_message() -> HelloResponse:
+    return HelloResponse()
 
 
 def create_app() -> FastAPI:
@@ -30,6 +38,10 @@ def create_app() -> FastAPI:
         methods=["GET"],
         tags=["system"],
         summary="APIの稼働状態を確認する",
+    )
+
+    application.add_api_route(
+        "/hello", hello_message, response_model=HelloResponse, methods=["GET"], tags=["system"], summary="挨拶をする"
     )
 
     return application
