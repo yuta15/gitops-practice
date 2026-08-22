@@ -14,6 +14,10 @@ class HelloResponse(BaseModel):
     message: str = "Hello World"
 
 
+class HogeResponse(BaseModel):
+    message: str = "hogehoeg"
+
+
 def health_check() -> HealthResponse:
     """APIがリクエストを処理できる状態であることを返す。"""
     return HealthResponse()
@@ -21,6 +25,10 @@ def health_check() -> HealthResponse:
 
 def hello_message() -> HelloResponse:
     return HelloResponse()
+
+
+def hoge() -> HogeResponse:
+    return HogeResponse()
 
 
 def create_app() -> FastAPI:
@@ -42,6 +50,10 @@ def create_app() -> FastAPI:
 
     application.add_api_route(
         "/hello", hello_message, response_model=HelloResponse, methods=["GET"], tags=["system"], summary="挨拶をする"
+    )
+
+    application.add_api_route(
+        "/hoge", hoge, response_model=HogeResponse, methods=["GET"], tags=["system"], summary="ほげ"
     )
 
     return application
