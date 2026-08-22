@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-prd
+  name: application-dev
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/yuta15/gitops-practice.git
     targetRevision: main
-    path: manifests/prd/
+    path: manifests/dev/
 
   destination:
     server: https://kubernetes.default.svc
