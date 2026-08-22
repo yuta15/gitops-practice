@@ -1,0 +1,12 @@
+resources:
+  - ../
+
+namespace: test-app-dev
+
+nameSuffix: -dev
+
+labels:
+  - pairs: 
+      environment: dev
+
+image: ghcr.io/yuta15/gitops-practice:16069377f4a4da8de1fec0413f8091505b6159de

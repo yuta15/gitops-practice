@@ -1,0 +1,12 @@
+resources:
+  - ../
+
+namespace: test-app-prd
+
+nameSuffix: -prd
+
+labels:
+  - pairs: 
+      environment: prd
+
+image: ghcr.io/yuta15/gitops-practice:16069377f4a4da8de1fec0413f8091505b6159de
