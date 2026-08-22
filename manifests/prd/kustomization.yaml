@@ -9,5 +9,6 @@ labels:
   - pairs: 
       environment: prd
 
-image: 
-  - name: ghcr.io/yuta15/gitops-practice:16069377f4a4da8de1fec0413f8091505b6159de
+images: 
+  - name: ghcr.io/yuta15/gitops-practice
+    newTag: 16069377f4a4da8de1fec0413f8091505b6159de
