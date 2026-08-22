@@ -16,5 +16,5 @@ spec:
         app: test-app
     spec:
       containers:
-        - image: ghcr.io/yuta15/gitops-practice:cb02cd99b90315469a7574c60c46732ecaf02d41
+        - image: ghcr.io/yuta15/gitops-practice:2fb17254999d3ec93d58afefc512b386a5804d60
           name: test-app
