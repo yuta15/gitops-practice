@@ -11,4 +11,4 @@ labels:
 
 images: 
   - name: ghcr.io/yuta15/gitops-practice
-    newTag: 16069377f4a4da8de1fec0413f8091505b6159de
+    newTag: 2fb17254999d3ec93d58afefc512b386a5804d60
